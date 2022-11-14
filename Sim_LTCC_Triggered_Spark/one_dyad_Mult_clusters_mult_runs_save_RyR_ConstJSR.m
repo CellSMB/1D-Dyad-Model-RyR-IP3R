@@ -1,7 +1,7 @@
 %%% Agne Tilunaite 2019
 %%% Edited for clarity by Hilary Hunt 2020
 %%% Modified by Joshua Chung 2021
-numSimulations=50;
+numSimulations=200;
 simTime=1070;       % ms
 triggerTime=1000;   % ms
 rec_startTime=950;  % ms
