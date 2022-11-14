@@ -1,6 +1,6 @@
-%%% Plots FDHM + FF0_amp (Swarm Plot) & Sim with Sparks (Bar Chart)
+%%% Plots Spark FDHM + Amp (Swarm Plot) & %Sim with Sparks (Bar Chart)
 % Simulation Condition (Sim Cond): 1 Dyad 0 Trigger
-addpath('C:\Users\joshuac2\OneDrive - The University of Melbourne\PhD\Simulations - Codes\stochastic_ECC_ETC-master\3Dyads_PigPaper')
+
 st_t={'_0'};
 IP3R_Names=[0 10 20 40];
 SimAnlys_Start_t=1000;
