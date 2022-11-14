@@ -1,7 +1,7 @@
 %%% Agne Tilunaite 2019
 %%% Edited for clarity by Hilary Hunt 2020
 %%% Modified by Joshua Chung 2021
-numSimulations=50;
+numSimulations=200;
 simTime=1070;       % ms
 triggerTime=1000;   % ms
 rec_startTime=950;  % ms
@@ -137,7 +137,7 @@ for run=1:numel(vary_nIP3R)
         Prob_nIP3R_Calc=(pIP3R/(run-1))*1./(1:(run-1));
         Prob_nIP3R=[1-sum(Prob_nIP3R_Calc,2) Prob_nIP3R_Calc];
         IP3R_open_simt=zeros(2,1); % ms
-        IP3R_open_durn=log10(rand(2,1).^-1);
+        IP3R_open_durn=log(rand(2,1).^-1);
         IP3R_open_dummy=IP3R_open_durn;
 
         for iter=1:titer_total
@@ -176,7 +176,7 @@ for run=1:numel(vary_nIP3R)
                         (((simt+dumt)-IP3R_open_simt)>=IP3R_open_dummy);
                     IP3R_open_durn=...
                         IP3R_open_durn-...
-                        (IP3R_open_durn-log10(rand(2,1).^-1)).*...
+                        (IP3R_open_durn-log(rand(2,1).^-1)).*...
                         (((simt+dumt)-IP3R_open_simt)>=IP3R_open_dummy);
                     IP3R_open_simt=...
                         IP3R_open_simt-...
