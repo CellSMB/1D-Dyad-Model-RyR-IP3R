@@ -133,7 +133,7 @@ hold on
 for i=1:numel(nms_Amp)-1
     RowIndx=find(ismember(c_Amp(:,1:2),[i i+1],'rows'));
     if c_Amp(RowIndx,end) < max(p_Threshold)
-        plot(xSigLine([2*i-1 2*i]),[1 1]*max(vertcat(Cai_Amp_Result{xTick(2*i-1:2*i)}))*1.05,'-k');%,mean(sigx([2*i-1 2*i])),max(Cai_Amp_Response)*1.1,'*k')
+        plot(xSigLine([2*i-1 2*i]),[1 1]*max(vertcat(Cai_Amp_Result{xTick(2*i-1:2*i)}))*1.05,'-k');
         plot(xSigLine([2*i-1 2*i-1]),max(vertcat(Cai_Amp_Result{xTick(2*i-1:2*i)}))*[1.025 1.05],'-k')
         plot(xSigLine([2*i 2*i]),max(vertcat(Cai_Amp_Result{xTick(2*i-1:2*i)}))*[1.025 1.05],'-k')
 
