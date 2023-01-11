@@ -19,7 +19,7 @@ par_ip3r.v24=(q24_parameters(1)+q24_parameters(2).*par_ip3r.p.^q24_parameters(4)
 par_ip3r.k24=q24_parameters(5);
 par_ip3r.n24=q24_parameters(6);
 par_ip3r.kn24=q24_parameters(7)+q24_parameters(8)./(par_ip3r.p.^q24_parameters(10)+q24_parameters(9)^q24_parameters(10));   % alters the range at which q24 is low
-par_ip3r.nn24=q24_parameters(11)+q24_parameters(12).*par_ip3r.p.^q24_parameters(14)./(par_ip3r.p.^0.25+q24_parameters(13)^q24_parameters(14));
+par_ip3r.nn24=q24_parameters(11)+q24_parameters(12).*par_ip3r.p.^q24_parameters(14)./(par_ip3r.p.^q24_parameters(14)+q24_parameters(13)^q24_parameters(14));
 par_ip3r.a24=(q24_parameters(15)./(par_ip3r.p.^q24_parameters(17)+q24_parameters(16)^q24_parameters(17)))./1000;
 
 par_ip3r.v42=(q42_parameters(1)+q42_parameters(2)./(par_ip3r.p.^q42_parameters(4)+q42_parameters(3)^q42_parameters(4)))./1000;
