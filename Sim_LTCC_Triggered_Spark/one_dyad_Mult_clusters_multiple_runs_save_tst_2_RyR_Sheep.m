@@ -182,7 +182,7 @@ for run=1:numel(vary_SERCA_lvl)
                 
                 %%% Solves RD Species from t=t --> t=t+dt using RK1
                 Yn=[Cai, CaJSR, CaNSR, CaCaM, CaATP, CaF4, CaTnC, CaCSQ];
-                Yn1=EulerMethod(Yn,par,ip3r_par,RyR_open_sums,IP3R_open_sums,simt);             % values at the time step n+1
+                Yn1=EulerMethod(Yn,par,ip3r_par,RyR_open_sums,IP3R_open_sums);             % values at the time step n+1
                 
                 %%% Calculates/Updates Receptor (RyR + IP3R) gating kinetics - k_open/k_close
                 % Calculates each IP3R transition rates given its state
@@ -212,7 +212,7 @@ for run=1:numel(vary_SERCA_lvl)
                 
                 % All Receptor (RyR + IP3R) gating kinetics under initial Yn1
                 lambda_h42=(ip3r_par.vh42-ip3r_par.ah42)*(RyR_sparse(IP3RVector,2)==2)+ip3r_par.ah42;
-                [m42_New,h42_New,m24_New,h24_New]=update_ip3r_states(Yn1(RyR_sparse(IP3RVector,1),1).*isoform_scale,m42,h42,m24,h24,lambda_h42,ip3r_par,par);
+                [m42_New,h42_New,m24_New,h24_New]=Update_IP3R_vars(Yn1(RyR_sparse(IP3RVector,1),1).*isoform_scale,m42,h42,m24,h24,lambda_h42,ip3r_par,par);
                 
                 q24=ip3r_par.a24+ip3r_par.v24.*(1-m24_New.*h24_New);% q24 Drive --> Park
                 q42=ip3r_par.a42+ip3r_par.v42.*m42_New.*h42_New;    % q42 Park --> Drive
@@ -261,11 +261,11 @@ for run=1:numel(vary_SERCA_lvl)
                 par.dt=dt_min;  % new dt obtained here
 
                 % Recalculate system with new dt (in "par" struct)
-                [Yn1,J]=EulerMethod(Yn,par,ip3r_par,RyR_open_sums,IP3R_open_sums,simt);          % values at the time step n+1
+                [Yn1,J]=EulerMethod(Yn,par,ip3r_par,RyR_open_sums,IP3R_open_sums);          % values at the time step n+1
                 
                 % Receptor gating kinetics under Yn1 with new dt (overwrites previous gating kinetics under Yn1)
                 lambda_h42=(ip3r_par.vh42-ip3r_par.ah42)*(RyR_sparse(IP3RVector,2)==2)+ip3r_par.ah42;
-                [m42_New,h42_New,m24_New,h24_New]=update_ip3r_states(Yn1(RyR_sparse(IP3RVector,1),1).*isoform_scale,m42,h42,m24,h24,lambda_h42,ip3r_par,par);
+                [m42_New,h42_New,m24_New,h24_New]=Update_IP3R_vars(Yn1(RyR_sparse(IP3RVector,1),1).*isoform_scale,m42,h42,m24,h24,lambda_h42,ip3r_par,par);
                 
                 q24=ip3r_par.a24+ip3r_par.v24.*(1-m24_New.*h24_New);% q24 Drive --> Park
                 q42=ip3r_par.a42+ip3r_par.v42.*m42_New.*h42_New;    % q42 Park --> Drive
