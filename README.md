@@ -15,7 +15,8 @@
         * Update_IP3R_vars.m
         * parsave.m
 2. Result analysis & figure generation
-    * Run: plot_Triggered_Spark_Cai_profile.m (temporal evolution of: dyad Ca<sup>2+</sup>, JSR Ca<sup>2+</sup>, n(RyR open), n(IP3R open)) 
+    * Run: plot_Triggered_Spark_Cai_profile.m (temporal evolution of: dyad Ca<sup>2+</sup>, JSR Ca<sup>2+</sup>, n(RyR open), n(IP3R open))
+    * For sheep RyR model - Run: one_dyad_SheepRyR_plots.m (temporal evolution of dyad Ca<sup>2+</sup>, JSR Ca<sup>2+</sup>, n(RyR open))
     * With dependencies:
         * data_shade.m
     * Run: extract_Triggered_spark_data.m (identifies and extracts spark statistics into one file)
