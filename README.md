@@ -6,6 +6,7 @@
     * Run: one_dyad_Mult_clusters_mult_runs_save_RyR_ConstJSR.m (constant JSR leak) or;
     * Run: one_dyad_Mult_clusters_mult_runs_save_RyR_StochJSR.m (randomly occurring JSR leak) or;
     * Run: one_dyad_Mult_clusters_mult_runs_save_rand_RyR_IP3R.m (random cluster arrangement in dyad)
+    * Run: one_dyad_Mult_clusters_mult_runs_save_RyR_Sheep.m (Sheep RyR, varying SERCA activity, no IP3R)
     * With dependencies:
         * RxnDiffusion_parameters.m
         * IP3R_parameters.m
@@ -14,7 +15,7 @@
         * Update_IP3R_vars.m
         * parsave.m
 2. Result analysis & figure generation
-    * Run: plot_Triggered_Spark_Cai_profile.m (temporal evolution of: dyad Ca<sup>2+</sup>, JSR Ca<sup>2+</sup>, n(RyR open), n(IP3R open))
+    * Run: plot_Triggered_Spark_Cai_profile.m (temporal evolution of: dyad Ca<sup>2+</sup>, JSR Ca<sup>2+</sup>, n(RyR open), n(IP3R open)) 
     * With dependencies:
         * data_shade.m
     * Run: extract_Triggered_spark_data.m (identifies and extracts spark statistics into one file)
